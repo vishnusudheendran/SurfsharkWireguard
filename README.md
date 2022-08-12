@@ -7,26 +7,19 @@ Compatible with : __Linux , Darwin , Windows__.
 ``` bash
 sudo ./installer.sh
 ```
-#### ArchLinux
-Now Wiregen available in [AUR](https://aur.archlinux.org/)
-``` bash
-yay -S surfshark-wireguard
-```
 
-now you can use `wiregen` anywhere on your computer.
+You can use `SurfsharkWireguard` anywhere on your computer.
 ### Portable
 To use the script:
 ``` bash
-python wiregen.py -u EMAIL -p PASSWORD
+python SurfsharkWireguard.py -u EMAIL -p PASSWORD
 ```
 If above command doesn't work, try:
 ``` bash
-python3 wiregen.py --user EMAIL --pass PASSWORD
+python3 SurfsharkWireguard.py --user EMAIL --pass PASSWORD
 ```
-Also we have Terminal user interface. \
+Also you can use Terminal user interface. \
 Simply run python file. \
-![Screenshot](https://raw.githubusercontent.com/Incognito-Coder/Wiregen/master/img/main.png "Application")
+![Screenshot](https://github.com/vishnusudheendran/SurfsharkWireguard/raw/master/img/main.png "Application")
 # Credits
-Developer : Incognito Coder \
-if you enjoy my content, consider to buy me a coffee here:
-1. Donate [ZarinPal](https://zarinp.al/@incognito)
+Developer : Vishnu Sudheendran

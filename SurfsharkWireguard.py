@@ -104,9 +104,9 @@ def Builder(path):
     for i in unique:
         try:
             ip = socket.gethostbyname(i['connectionName'])
-            location = i['location'].replace(" ", "_")
+            location = i['country'].replace(" ", "_") + '_'+ i['location'].replace(" ", "_")
             with open(temp + '/' + location + '.conf', 'w') as file:
-                wg = f"# Script by Incognito Coder @IC_mods\n[Interface]\nPrivateKey = {prvK}\nAddress = 10.14.0.2/16\nDNS = 162.252.172.57, 149.154.159.92\n\n[Peer]\nPublicKey = {i['pubKey']}\nAllowedIps= 0.0.0.0/0\nEndpoint = {ip}:51820"
+                wg = f"[Interface]\nPrivateKey = {prvK}\nAddress = 10.14.0.2/16\nDNS = 1.1.1.1, 1.0.0.1\n\n[Peer]\nPublicKey = {i['pubKey']}\nAllowedIps= 0.0.0.0/0\nEndpoint = {ip}:51820"
                 file.write(wg)
                 file.close()
                 archive.write(temp + '/' + location + '.conf', location + '.conf')
@@ -136,25 +136,25 @@ def help():
 
     os.system('cls' if os.name == 'nt' else 'clear')
     print(
-        "┌───────────────────────────────────────────────────────────────────────┐\n"
-        f"|{colors.OKCYAN}\t ____              __ ____  _                _    {colors.ENDC}\t\t|\n"
-        f"|{colors.OKCYAN}\t/ ___| _   _ _ __ / _/ ___|| |__   __ _ _ __| | __{colors.ENDC}\t\t|\n"
-        f"|{colors.OKCYAN}\t\___ \| | | | '__| |_\___ \| '_ \ / _` | '__| |/ /{colors.ENDC}\t\t|\n"
-        f"|{colors.OKCYAN}\t ___) | |_| | |  |  _|___) | | | | (_| | |  |   < {colors.ENDC}\t\t|\n"
-        f"|{colors.OKCYAN}\t|____/ \__,_|_|  |_| |____/|_| |_|\__,_|_|  |_|\_\ {colors.ENDC}\t\t| \n"
-        f"|{colors.FAIL}\t__        _____ ____  _____ ____ _   _   _    ____  ____  {colors.ENDC}\t|\n"
-        f"|{colors.FAIL}\t\ \      / /_ _|  _ \| ____/ ___| | | | / \  |  _ \|  _ \ {colors.ENDC}\t|\n"
-        f"|{colors.FAIL}\t \ \ /\ / / | || |_) |  _|| |  _| | | |/ _ \ | |_) | | | |{colors.ENDC}\t|\n"
-        f"|{colors.FAIL}\t  \ V  V /  | ||  _ <| |__| |_| | |_| / ___ \|  _ <| |_| |{colors.ENDC}\t|\n"
-        f"|{colors.FAIL}\t   \_/\_/  |___|_| \_\_____\____|\___/_/   \_\_| \_\____/ {colors.ENDC}\t|\n"
-        "|\t\t\t\t\t\t\t\t\t|\n"
-        "├───────────────────────────────────────────────────────────────────────┤\n"
-        "|\t\t\t\t\t\t\t\t\t|\n"
-        f"|{colors.WARNING}\t Developer : Incognito Coder || Channel : T.me/IC_MODS   {colors.ENDC}\t|\n"
-        "|\t\t\t\t\t\t\t\t\t|\n"
-        "├───────────────────────────────────────────────────────────────────────┤\n"
-        "| Version : 2.8 || GitHub : https://github.com/Incognito-Coder/Wiregen  |\n"
-        "└───────────────────────────────────────────────────────────────────────┘"
+        "┌───────────────────────────────────────────────────────────────────────────────────────┐\n"
+        f"|{colors.OKCYAN}\t\t ____              __ ____  _                _    {colors.ENDC}\t\t\t|\n"
+        f"|{colors.OKCYAN}\t\t/ ___| _   _ _ __ / _/ ___|| |__   __ _ _ __| | __{colors.ENDC}\t\t\t|\n"
+        f"|{colors.OKCYAN}\t\t\___ \| | | | '__| |_\___ \| '_ \ / _` | '__| |/ /{colors.ENDC}\t\t\t|\n"
+        f"|{colors.OKCYAN}\t\t ___) | |_| | |  |  _|___) | | | | (_| | |  |   < {colors.ENDC}\t\t\t|\n"
+        f"|{colors.OKCYAN}\t\t|____/ \__,_|_|  |_| |____/|_| |_|\__,_|_|  |_|\_\ {colors.ENDC}\t\t\t| \n"
+        f"|{colors.FAIL}\t\t__        _____ ____  _____ ____ _   _   _    ____  ____  {colors.ENDC}\t\t|\n"
+        f"|{colors.FAIL}\t\t\ \      / /_ _|  _ \| ____/ ___| | | | / \  |  _ \|  _ \ {colors.ENDC}\t\t|\n"
+        f"|{colors.FAIL}\t\t \ \ /\ / / | || |_) |  _|| |  _| | | |/ _ \ | |_) | | | |{colors.ENDC}\t\t|\n"
+        f"|{colors.FAIL}\t\t  \ V  V /  | ||  _ <| |__| |_| | |_| / ___ \|  _ <| |_| |{colors.ENDC}\t\t|\n"
+        f"|{colors.FAIL}\t\t   \_/\_/  |___|_| \_\_____\____|\___/_/   \_\_| \_\____/ {colors.ENDC}\t\t|\n"
+        "|\t\t\t\t\t\t\t\t\t\t\t|\n"
+        "├───────────────────────────────────────────────────────────────────────────────────────┤\n"
+        "|\t\t\t\t\t\t\t\t\t\t\t|\n"
+        f"|{colors.WARNING} Developer : Vishnu Sudheendran   {colors.ENDC}\t\t\t\t\t\t\t|\n"
+        "|\t\t\t\t\t\t\t\t\t\t\t|\n"
+        "├───────────────────────────────────────────────────────────────────────────────────────┤\n"
+        "| Version : 2.8 || GitHub : https://github.com/vishnusudheendran/SurfsharkWireguard  \t|\n"
+        "└───────────────────────────────────────────────────────────────────────────────────────┘"
     )
     print(f'{colors.HEADER}'
           '[1] Create Configs\n'
@@ -194,7 +194,7 @@ def main(argv):
             elif opt in ('-p', '--pass'):
                 password = arg
             elif opt in ("-h", "--help"):
-                print(f'Incognito Coder SurfShark Wireguard Generator\n'
+                print(f'SurfShark Wireguard Generator\n'
                       'Usage : -u TEXT -p TEXT')
                 sys.exit(0)
         Login(username, password, path)
